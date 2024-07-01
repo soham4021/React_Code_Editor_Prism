@@ -3,18 +3,6 @@
 
 A simple, lightweight code editor built with React that features real-time syntax highlighting powered by PrismJS.
 
-## Table of Contents
-
-- [Demo](#demo)
-- [Features](#features)
-- [Getting Started](#getting-started)
-- [Usage](#usage)
-- [Customization](#customization)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
-- [License](#license)
-
-
 ## Features
 
 - **Real-Time Syntax Highlighting:** Highlight code as you type using PrismJS.
