@@ -1,50 +1,62 @@
-import React, { useState } from "react";
-import Editor from "react-simple-code-editor";
+
+import React, { useState, useEffect } from "react";
 import Prism from "prismjs";
 import "prismjs/components/prism-jsx.min";
 import "prismjs/themes/prism.css";
-import "./App.css";
+import "./App.css"
 
-const App = () => {
+const CodeEditor = () => {
 	const [code, setCode] = useState(`
-    import React from 'react';
+  import React from 'react';
     import ReactDOM from 'react-dom';
 
     function App() {
-      return (
-        <h1>Hello World</h1>
+       return (
+         <h1>Hello World</h1>
       );
     }
 
-    ReactDOM.render(<App />, document.getElementById('root'));
-  `);
+  ReactDOM.render(<App />, document.getElementById('root'));
+`);
+	const [highlightedCode, setHighlightedCode] = useState("");
 
-	const highlight = (code) => {
-		return Prism.highlight(code, Prism.languages.jsx, "jsx");
+	useEffect(() => {
+		const highlighted = Prism.highlight(code, Prism.languages.jsx, "jsx");
+		setHighlightedCode(highlighted);
+	}, [code]);
+
+	const handleChange = (e) => {
+		setCode(e.target.value);
 	};
 
 	return (
 		<div className="container">
 			<h1>React Simple Code Editor</h1>
-			<Editor
-				value={code}
-				onValueChange={setCode}
-				highlight={highlight}
-				padding={10}
-				style={{
-					fontFamily: '"Fira code", "Fira Mono", monospace',
-					fontSize: 14,
-				}}
-			/>
+			<div className="code-editor-container">
+				<textarea
+					value={code}
+					onChange={handleChange}
+					className="code-input"
+					spellCheck="false"
+				/>
+				<div className="code-output">
+					<pre>
+						<code
+							className="language-jsx"
+							dangerouslySetInnerHTML={{ __html: highlightedCode }}
+						/>
+					</pre>
+				</div>
+			</div>
 			<a
 				href="https://github.com/soham4021/React_Code_Editor_Prism"
 				target="_blank"
 				rel="noopener noreferrer"
 				className="github-button">
-				GitHub
+				GitHub Repo
 			</a>
 		</div>
 	);
 };
 
-export default App;
+export default CodeEditor;

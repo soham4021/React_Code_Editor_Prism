@@ -6,7 +6,7 @@ A simple, lightweight code editor built with React that features real-time synta
 ## Features
 
 - **Real-Time Syntax Highlighting:** Highlight code as you type using PrismJS.
-- **Simple and Lightweight:** Built with `react-simple-code-editor` and a basic `textarea` for a lightweight experience.
+- **Simple and Lightweight:** Built with `PrismJS` and a basic `textarea` for a lightweight experience.
 - **GitHub Integration:** A button linking to the GitHub repository of the project.
 
 ## Getting Started
