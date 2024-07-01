@@ -32,14 +32,14 @@ npm -v
 
 2. **Install Dependencies**:
 
-### Run the following command to install all necessary packages:
+#### Run the following command to install all necessary packages:
 ```
 npm install
 ```
 
 3. **Start the application**:
 
-### To start the application in development mode, use:
+#### To start the application in development mode, use:
 ```
 npm start
 ```
